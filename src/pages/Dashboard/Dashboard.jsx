@@ -3,14 +3,15 @@ import Loading from "../../components/Loader/Loading";
 import InvoiceTable from "./component/InvoiceTable";
 import Pagination from "./component/Pagination";
 import { usePagination } from "../../hooks/usePagination";
-import { useInvoices } from "../../hooks/useInvoice";
+import { fetchReconciledInvoices } from "../../services/dashBoardServices";
 
 const ITEMS_PER_PAGE = 10;
 
 const Dashboard = () => {
   const [selectedAll, setSelectedAll] = useState(false);
-
-  const { invoices, error, loading, setInvoices } = useInvoices();
+  const [invoices, setInvoices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const {
     currentPage,
     totalPages,
@@ -42,6 +43,28 @@ const Dashboard = () => {
     },
     [invoices]
   );
+
+  useEffect(() => {
+    const fetchInvoices = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await fetchReconciledInvoices();
+        const processed = res.response.reconciledInvoices.map((inv) => ({
+          ...inv,
+          selected: false,
+        }));
+        setInvoices(processed);
+      } catch (err) {
+        console.error("Failed to fetch invoices:", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchInvoices();
+  }, []);
 
   useEffect(() => {
     const allSelected =
