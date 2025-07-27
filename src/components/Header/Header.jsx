@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#2563eb] text-white px-6 py-4 shadow-md fixed top-0 w-full">
+    <header className="bg-[#2563eb] text-white px-6 py-4 shadow-md fixed top-0 w-full z-[100]">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center">
         <div className="flex items-center space-x-2 mb-4 sm:mb-0">
           <div className="bg-white p-2 rounded-lg shadow-sm">
@@ -35,11 +35,11 @@ const Header = () => {
         </div>
 
         <nav aria-label="Main navigation" className="w-full sm:w-auto">
-          <ul className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 w-full sm:w-auto">
+          <ul className="flex flex-row sm:space-x-4 space-x-2 sm:space-y-0 w-full sm:w-auto items-center">
             <li>
               <button
                 onClick={() => navigate("/dashboard")}
-                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-2 sm:px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white sm:text-[16px] text-[12px]"
               >
                 Dashboard
               </button>
@@ -47,7 +47,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => navigate("/about")}
-                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-2 sm:px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white sm:text-[16px] text-[12px]"
               >
                 About
               </button>
@@ -55,7 +55,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => navigate("/team")}
-                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-2 sm:px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white sm:text-[16px] text-[12px]"
               >
                 My Team
               </button>
@@ -63,7 +63,7 @@ const Header = () => {
             <li>
               <button
                 onClick={handleLogoutClick}
-                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-red-100 px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full sm:w-auto bg-white text-[#2563eb] hover:bg-gray-100 px-2 sm:px-5 py-2 rounded-lg font-medium transition duration-300 border border-transparent hover:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-white sm:text-[16px] text-[12px]"
               >
                 Logout
               </button>
