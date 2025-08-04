@@ -1,1 +1,0 @@
-import{j as s}from"./index-M4CyN_1V.js";const d=()=>s.jsxs("div",{className:"loading-container",children:[s.jsxs("div",{className:"loading-spinner",children:[s.jsx("div",{className:"dot"}),s.jsx("div",{className:"dot"}),s.jsx("div",{className:"dot"})]}),s.jsx("p",{className:"loading-text",children:"Loading..."})]});export{d as default};

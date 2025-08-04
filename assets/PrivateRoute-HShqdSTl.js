@@ -1,0 +1,1 @@
+import{j as t,O as e,N as o}from"./index-BHNWouzj.js";const n=()=>localStorage.getItem("authToken")?t.jsx(e,{}):t.jsx(o,{to:"/login"});export{n as default};
